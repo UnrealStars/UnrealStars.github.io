@@ -5,49 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <style>
-        font{
-            /*前面是字体族名称  最后一个是类族名称
-            浏览器在显示字体的时候，依次判断是否支持当前的字体，知道最后的字体系列*/
-            font-family: "仿宋","宋体",sans-serif;
-            /*bold加粗  bolder深度加粗  lighter细体（100-900）*/
-            font-weight: bold;
-            /*font-size字体大小  取值：1、具体的px值
-                                     2、百分比（默认字体大小16px）*/
-            font-size: 150%;
-            /*font-style字体斜体*/
-            font-style: italic;
-            color: red;
-            /*opacity 透明度（0是全透明）*/
-            opacity: 1;
-            font-size: 30px;
-            /*line-height行高：单行字体占用的高度*/
-            line-height: 45px;
-            /*justify 两端对齐   left=start：左对齐（默认）  right=end：右对齐  ceenter: 居中对齐*/
-            text-align:justify;
-            /*letter-spacing:控制字符间距（px normal）*/
-            letter-spacing: normal;
-            /*文本修饰  下划线underline  中划线line-through  上划线over*/
-            text-decoration: none;
-            /*三者配合使用：不换行，以...的形式显示
-            (三个属性配合使用实现单行超出文本隐藏)*/
-            /*overflow: hidden;  !*处理超出显示屏的内容隐藏*!
-            white-space: nowrap;  !*不换行*!
-            text-overflow: ellipsis; !*截取还是以...的方式显示*!*/
-            /*文本阴影颜色  x方向的偏移 y方向的偏移  阴影的颜色*/
-            text-shadow: 2px 2px #f2e78d;
-            /*文本描边 描边的宽度  描边的颜色*/
-            -webkit-text-stroke: 2px #ff7292;
-            /*首行缩进*/
-            /*em：相对的字符单位（2倍的字体大小）*/
-            text-indent: 2em;
-        }
         font1{
             font-family: "微软雅黑","宋体",sans-serif;
             font-size: 16px;
             color: #6f6f6f;
-            opacity: 1;
             line-height: 30px;
             text-align:left;
         }
@@ -56,112 +18,100 @@
              font-size: 20px;
              font-weight: bold;
              color: #008cba;
-             opacity: 1;
              line-height: 30px;
              text-align:left;
          }
         font3{
             font-family: "微软雅黑","宋体",sans-serif;
-            font-size: 20px;
+            font-size: 24px;
             font-weight: bold;
-            letter-spacing: normal;
             color: #ffffff;
-            opacity: 1;
-            line-height: 0px;
-            text-align:left;
-            position: absolute;
-            left: 620px;
-            top: 150px;
+            line-height: 15px;
         }
         font4{
             font-family: "微软雅黑","宋体",sans-serif;
-            font-size: 20px;
+            font-size: 12px;
             font-weight: bold;
-            letter-spacing: normal;
             color: #ffffff;
-            opacity: 1;
-            line-height: 0px;
-            text-align: left;
-            position: absolute;
-            left: 580px;
-            top: 185px;
         }
         font5{
             font-family: "微软雅黑","宋体",sans-serif;
             font-size: 16px;
             color: #ffffff;
-            opacity: 1;
-            line-height: 30px;
         }
+        a img{border:none} .testdiv *{ vertical-align:middle; }
+
     </style>
-
     <title>我的简历</title>
-    <link rel="icon" href="res/cv.png" type="image/x-icon"/>
-
+    <link rel="icon" href="./res/cv.png" type="image/x-icon"/>
 </head>
 <body>
 
 </div>
 <div id="container" style="width:1335px">
-    <div id="menu11" style="background-image: url(./res/bg_2/1.jpg);height:30px;width:1335px;float:left;"></div>
-    <div id="menu" style="background-image: url(./res/bg_2/2.jpg);height:1200px;width:300px;float:left;"></div>
-    <div id="menu1" style="background-image: url(./res/bg_1.jpg); height:200px;width:735px;float:left;">
-        <p style="text-align:center"><img src="res/img_1.png" width="100" height="100"><br></p>
-            <font3><h3 align="center">Xia Zhen&ensp;<img src="res/男.png" width="20" height="20"></h3></font3>
-        <font4><h6 align="center">一只喜欢画画、会修图的程序员。</h6></font4>
+    <div id="layout_top" style="background-image: url(./res/bg_2/1.jpg);height:30px;width:1335px;float:left;"></div>
+    <div id="layout_left" style="background-image: url(./res/bg_2/2.jpg);height:1200px;width:300px;float:left;"></div>
+    <div id="layout_center" style="background-image: url(./res/bg_1.jpg); height:200px;width:735px;float:left;">
+        <div id="layout_center_1" style="height:20px;width:735px;"></div>
+        <div id="layout_center_2" style="height:115px;width:735px;text-align:center;">
+            <img src="./res/img_1.png" width="100" height="100"></div>
+        <div id="layout_center_3" style="height:30px;width:735px;text-align:center;">
+            <font3>Xia Zhen</font3>
+            <img src="./res/男.png" style="width: 20px;height: 20px; vertical-align:baseline">
+        </div>
+        <div id="layout_center_4" style="height:120px;width:735px;text-align:center;">
+            <font4>一只喜欢画画、会修图的程序员。</font4>
+        </div>
     </div>
-    <div id="menu2" style="background-image: url(./res/bg_2/3.jpg);height:1200px;width:300px;float:right;"></div>
-    <div id="content2" style="background-color:#EEEEEE;height:1000px;width:20px;float:left;"></div>
-    <div id="content" style="background-color:#EEEEEE;height:1000px;width:220px;float:left;">
-
-        <font2><h3><img src="res/个人信息.png" width="30" height="30">&ensp;基本信息</h3></font2>
+    <div id="layout_right" style="background-image: url(./res/bg_2/3.jpg);height:1200px;width:300px;float:right;"></div>
+    <div id="layout_center2_1" style="background-color:#EEEEEE;height:1000px;width:20px;float:left;"></div>
+    <div id="layout_center2_2" style="background-color:#EEEEEE;height:1000px;width:220px;float:left;">
+        <font2><h3><img src="./res/个人信息.png" style="width: 31px;height: 31px; vertical-align:text-top">&ensp;基本信息</h3></font2>
         <font1>
-            <img src="res/name.png" width="20" height="20">
+            <img src="./res/name.png" style="width: 21px;height: 21px; vertical-align:text-top">
             夏振<br>
-            <img src="res/age.png" width="20" height="20">
+            <img src="./res/age.png" style="width: 21px;height: 21px; vertical-align:text-top">
             21<br>
-            <img src="res/address.png" width="20" height="20">
+            <img src="./res/address.png" style="width: 21px;height: 21px; vertical-align:text-top">
             浙江&nbsp嘉兴<br>
-            <img src="res/tel.png" width="20" height="20">
+            <img src="./res/tel.png" style="width: 21px;height: 21px; vertical-align:text-top">
             15507319545<br>
-            <img src="res/email.png" width="20" height="20">
+            <img src="./res/email.png" style="width: 21px;height: 21px; vertical-align:text-top">
             3450034600@qq.com
             <br><br>
         </font1>
-        <!--cocos2dx客户端开发-->
-        <font2><h3><img src="res/职位.png" width="30" height="30">&ensp;求职意向</h3></p></font2>
+        <font2><h3><img src="./res/职位.png" style="width: 31px;height: 31px; vertical-align:text-top">&ensp;求职意向</h3></p></font2>
         <font1>Unity3D客户端开发</font1>
         <br><br><br>
-        <font2><h3><img src="res/特长爱好.png" width="30" height="30">&ensp;特长爱好</h3></font2>
-        <font1>
-            PS、CG绘画、摄影、乒乓球<br>
-        </font1>
+        <font2><h3><img src="./res/特长爱好.png" style="width: 31px;height: 31px; vertical-align:text-top">&ensp;特长爱好</h3></font2>
+        <font1>PS、CG绘画、摄影、乒乓球<br></font1>
     </div>
-    <div id="content3" style="background-color:#EEEEEE;height:1000px;width:20px;float:left;"></div>
-    <div id="menu3" style="background-color:#EEEEEE;height:1000px;width:455px;float:left;">
-        <font2><h3><img src="res/教育.png" width="30" height="30">&ensp;教育背景</h3></font2>
+    <div id="layout_center2_3" style="background-color:#EEEEEE;height:1000px;width:20px;float:left;"></div>
+    <div id="layout_center2_4" style="background-color:#EEEEEE;height:1000px;width:455px;float:left;">
+        <font2><h3><img src="./res/教育.png" style="width: 31px;height: 31px; vertical-align:text-top">&ensp;教育背景</h3></font2>
         <font1>
-            2016.9-2018.6&emsp;&emsp;湖南科技职业学院&emsp;&emsp;软件技术（游戏开发方向）<br>
+            2016.9-2018.6&ensp;&ensp;湖南科技职业学院<br>
+            所学专业：软件技术（游戏开发方向）<br>
             主修课程：C程序设计、Unity3D、cocos2d-x、Flash游戏开发<br>
             选修课程：html5、MySQL、SQL数据库、数据结构、游戏策划与设计、3DMAX、PS<br>
         </font1>
-        <font2><h3><img src="res/技能.png" width="30" height="30">&ensp;专业技能</h3></font2>
+        <font2><h3><img src="./res/技能.png" style="width: 31px;height: 31px; vertical-align:text-top">&ensp;专业技能</h3></font2>
         <font1>
             掌握语言：C/C++，C#，Lua，html，PHP，ActionScript 3.0<br>
-            熟练软件：Visual Studio、Unity3d、PS、3DMAX、WPS三件套等。
+            熟练软件：Visual Studio、Unity3d、PS、3DMAX、WPS三件套等。<br>
         </font1>
-        <font2><h3><img src="res/项目.png" width="30" height="30">&ensp;项目经历</h3></font2>
+        <font2><h3><img src="./res/项目.png" style="width: 31px;height: 31px; vertical-align:text-top">&ensp;项目经历</h3></font2>
         <font1>
             暂无正式上线项目经历，以下皆为个人开发的Demo版作品。<br>
             2D纵轴射击类手游《太空大战》、益智类手游《纪念碑谷》、休闲类手游《愤怒的小鸟》、休闲类手游《甜品消消乐》、休闲类手游《Flappy Bird》、对战类手游《双人坦克大战》等。<br>
         </font1>
-        <font2><h3><img src="res/介绍.png" width="30" height="30">&ensp;自我介绍</h3></font2>
+        <font2><h3><img src="./res/介绍.png" style="width: 31px;height: 31px; vertical-align:text-top">&ensp;自我介绍</h3></font2>
         <font1>
             &emsp;&emsp;因为热爱游戏，所以大学选了这个专业，在校两年学习踏实积极，成绩位列全专业前茅，能独立开发完整的轻量级游戏，课余时间自学PS、游戏策划与设计、3D模型、游戏原画、游戏UI等与游戏开发相关的技能点。平时学习积极性高，善于沟通和交流，乐于分享，能吃苦耐劳，工作认真细致，勤奋好学，踏实肯干，学习能力和适应力强，善于在工作中分析和总结经验，能独立解决问题，勇于尝试新的事物和学习新的知识。<br>
         </font1>
     </div>
-    <div id="content4" style="background-color:#EEEEEE;height:1000px;width:20px;float:right;"></div>
-    <div id="footer" style="background-color:#1e425d;clear:both;text-align:center;">
+    <div id="layout_center2_5" style="background-color:#EEEEEE;height:1000px;width:20px;float:left;"></div>
+    <div id="layout_bottom" style="background-color:#1e425d;clear:both;text-align:center;">
         <font5>@2018 By Xia Zhen</font5>
     </div>
 
