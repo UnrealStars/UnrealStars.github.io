@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../taking-notes-using-markdown/">
+      
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
@@ -16,7 +18,7 @@
     
     
       
-        <title>大众网站推荐 - 幻辰的日记本</title>
+        <title>小米笔记批量导出 - 幻辰的日记本</title>
       
     
     
@@ -103,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              大众网站推荐
+              小米笔记批量导出
             
           </span>
         </div>
@@ -238,17 +240,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -262,7 +266,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             教程分享
@@ -294,10 +298,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -306,6 +319,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -351,7 +365,181 @@
                   
 
 
-<h1 id="_1">大众网站推荐</h1>
+<h1 id="_1">小米笔记批量导出</h1>
+<blockquote>
+<p>时间：2025年2月10日11:28:20</p>
+<p>原教程来自知乎，我在 B 站搜不到，于是做个转发<br />
+知乎原文：<a href="https://www.zhihu.com/question/35329107/answer/2726573615">https://www.zhihu.com/question/35329107/answer/2726573615</a></p>
+</blockquote>
+<p>如何将手机里的小米笔记，一次性批量导出到电脑？</p>
+<p>按以下步骤操作：</p>
+<ol>
+<li>
+<p>打开“小米云服务”官网：<a href="https://i.mi.com/">https://i.mi.com/</a><br />
+   登录账号，进入笔记<br />
+   （确认开启了笔记云同步，应该能看到手机的全部笔记）</p>
+</li>
+<li>
+<p>按“F12”，会打开浏览器的控制台工具<br />
+   点击切换至“控制台”选项卡<br />
+   （在这里鼠标单击可以输入代码和执行代码）</p>
+</li>
+<li>
+<p>复制下面的代码，粘贴代码，按回车键，开始执行代码<br />
+   ※ 注意：复制时可能会带有网站的复制文字水印，会代码报错<br />
+   请复制到其他地方，删去多余的文字水印，再复制到浏览器中执行代码</p>
+</li>
+<li>
+<p>等待代码执行完成<br />
+   会自动抓取全部笔记，并显示在新页面上<br />
+   并且会下载保存到本地“小米笔记.txt”</p>
+</li>
+</ol>
+<p>常见问题：</p>
+<ol>
+<li>如果代码报错，请检查复制内容是否完整，是否删去了网站的文字水印</li>
+<li>如果还是报错，请尝试换个浏览器，再次尝试</li>
+<li>暂不支持笔记中的图片、待办等内容的抓取</li>
+<li>如果需要修改笔记的显示顺序、是否下载，可在代码前面这里修改</li>
+</ol>
+<pre><code class="language-js">// ————————代码开始————————
+// 此处可修改笔记的显示顺序：0=正序（旧的在前），1=倒序（新的在前）
+var orderType = 1;
+
+// 此处可修改是否保存为txt文件：0=不保存，1=保存
+var saveAsTxt = 1;
+
+var text = &quot;&quot;;
+var txtContent = &quot;&quot;;
+var resultArray = [];
+
+var Ajax = {
+  get: function (url, fn) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(&quot;GET&quot;, url, false);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 &amp;&amp; (xhr.status == 200 || xhr.status == 304)) {
+        fn.call(this, xhr.responseText);
+      }
+    };
+    xhr.send();
+  },
+};
+
+function sortRule(a, b) {
+  return orderType === 1
+    ? b.date.getTime() - a.date.getTime()
+    : a.date.getTime() - b.date.getTime();
+}
+
+function nextPage(syncTag) {
+  var url =
+    &quot;https://i.mi.com/note/full/page/?ts=&quot; +
+    new Date().getTime() +
+    &quot;&amp;limit=200&quot;;
+  if (syncTag) {
+    url += &quot;&amp;syncTag=&quot; + syncTag;
+  }
+  Ajax.get(url, function (r) {
+    var result = JSON.parse(r);
+    for (var i in result.data.entries) {
+      let obj = result.data.entries[i];
+      let detailUrl =
+        &quot;https://i.mi.com/note/note/&quot; + obj.id + &quot;/?ts=&quot; + new Date().getTime();
+      Ajax.get(detailUrl, function (dtl) {
+        var detailInfo = JSON.parse(dtl).data.entry;
+        var date = new Date();
+        date.setTime(obj.createDate);
+
+        var resultObj = {};
+        try {
+          resultObj.title = JSON.parse(detailInfo.extraInfo).title;
+          resultObj.title = resultObj.title ?? &quot;无&quot;;
+        } catch (err) {}
+        resultObj.date = date;
+        resultObj.content = detailInfo.content;
+        resultArray.push(resultObj);
+      });
+    }
+
+    if (result.data.entries.length) {
+      nextPage(result.data.syncTag);
+    } else {
+      resultArray.sort(sortRule);
+
+      text += &quot;&lt;table&gt;&quot;;
+      for (let j in resultArray) {
+        let resObj = resultArray[j];
+        text += &quot;&lt;tr class='mytr'&gt;&lt;td class='mytd'&gt;\n\n&quot;;
+        text += '&lt;div class=&quot;card&quot;&gt;';
+        text += &quot;&lt;div&gt;&quot; + dateFormat(resObj.date) + &quot;&lt;/div&gt;&quot;;
+        text += &quot;&lt;div style='line-height: 12px;'&gt;-----------------------&lt;/div&gt;&quot;;
+        text += &quot;&lt;div&gt;&lt;/div&gt;&quot;;
+        text +=
+          '&lt;div style=&quot;margin-left:0px;&quot;&gt;标题：' + resObj.title + &quot;&lt;/div&gt;&quot;;
+        text +=
+          '&lt;div style=&quot;margin-left:0px;&quot;&gt;内容：' + resObj.content + &quot;&lt;/div&gt;&quot;;
+        text = text.replace(/[\n\r]/g, &quot;&lt;br/&gt;&quot;);
+        text += &quot;&lt;/div&gt;&quot;;
+        text += &quot;&lt;/td&gt;&lt;/tr&gt;&quot;;
+
+        txtContent += &quot;日期：&quot; + dateFormat(resObj.date) + &quot;\n&quot;;
+        txtContent += &quot;标题：&quot; + resObj.title + &quot;\n&quot;;
+        txtContent += &quot;内容：&quot; + resObj.content + &quot;\n&quot;;
+        txtContent += &quot;---------------------------\n&quot;;
+      }
+      text += &quot;&lt;/table&gt;&quot;;
+      text += `&lt;style&gt;
+                    .mytd{
+                        padding:10px;
+                        border-bottom: 1px solid #dedbdb;
+                    } 
+                    .mytr{} 
+                    .card{
+                        margin-top:30px;
+                    }
+                    table{}
+                &lt;/style&gt;`;
+
+      var newWindow = window.open();
+      newWindow.document.write(text);
+
+      if (saveAsTxt === 1) {
+        downloadTxtFile(txtContent, &quot;小米笔记.txt&quot;);
+      }
+    }
+  });
+}
+
+function dateFormat(date) {
+  return (
+    date.getFullYear() +
+    &quot;-&quot; +
+    (date.getMonth() + 1).toString().padStart(2, &quot;0&quot;) +
+    &quot;-&quot; +
+    date.getDate().toString().padStart(2, &quot;0&quot;) +
+    &quot; &quot; +
+    date.getHours().toString().padStart(2, &quot;0&quot;) +
+    &quot;:&quot; +
+    date.getMinutes().toString().padStart(2, &quot;0&quot;) +
+    &quot;:&quot; +
+    date.getSeconds().toString().padStart(2, &quot;0&quot;)
+  );
+}
+
+function downloadTxtFile(content, filename) {
+  var blob = new Blob([content], { type: &quot;text/plain&quot; });
+  var a = document.createElement(&quot;a&quot;);
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+nextPage();
+// ————————代码结束————————
+</code></pre>
+<p>最后感谢原作者的分享，记得给知乎原作者点个赞~</p>
 
 
 
