@@ -1,0 +1,1048 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
+    
+    
+      
+        <title>MonoGame发布apk - 幻辰的日记本</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#monogameapk" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="幻辰的日记本" class="md-header__button md-logo" aria-label="幻辰的日记本" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            幻辰的日记本
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MonoGame发布apk
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0ZM3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8Zm13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8Zm-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13Zm3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.598 1.591a.749.749 0 0 1 .785-.175 7.001 7.001 0 1 1-8.967 8.967.75.75 0 0 1 .961-.96 5.5 5.5 0 0 0 7.046-7.046.75.75 0 0 1 .175-.786Zm1.616 1.945a7 7 0 0 1-7.678 7.678 5.499 5.499 0 1 0 7.678-7.678Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="幻辰的日记本" class="md-nav__button md-logo" aria-label="幻辰的日记本" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    幻辰的日记本
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    教程分享
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            教程分享
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taking-notes-using-markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    记笔记的方式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%B0%8F%E7%B1%B3%E7%AC%94%E8%AE%B0%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小米笔记批量导出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    MonoGame发布apk
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    MonoGame发布apk
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.准备工作
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.创建引擎项目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.创建游戏项目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pc" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.创建 PC 项目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.创建 Android 项目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.运行 Android 项目
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.运行 Android 项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1android" class="md-nav__link">
+    <span class="md-ellipsis">
+      1、安装Android模拟器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2、在模拟器上运行项目
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3、在真机上运行
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6apk" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.导出apk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7aab" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.导出aab
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.准备工作
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.创建引擎项目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.创建游戏项目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pc" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.创建 PC 项目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.创建 Android 项目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.运行 Android 项目
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.运行 Android 项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1android" class="md-nav__link">
+    <span class="md-ellipsis">
+      1、安装Android模拟器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2、在模拟器上运行项目
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3、在真机上运行
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6apk" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.导出apk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7aab" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.导出aab
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="monogameapk">MonoGame从创建项目到发布apk</h1>
+<blockquote>
+<p>开发工具：VS 2022<br />
+MonoGame版本：3.8.1.303<br />
+本文编辑日期：2025.3.18</p>
+</blockquote>
+<h2 id="_1">简介</h2>
+<blockquote>
+<p>原教程参考：<a href="https://lajbert.github.io/blog/cross_platform_project/#/">https://lajbert.github.io/blog/cross_platform_project/#/</a><br />
+在此感谢原作者：Lajos</p>
+</blockquote>
+<p>本教程完整介绍从创建项目，到发布PC和Android平台的游戏版本的流程<br />
+其中包括，对项目的组织方式，适用于跨平台多版本的游戏项目</p>
+<p>项目结构图：<br />
+<img alt="MonoGame项目结构" src="../../assets/images/monogame project structure.png" width="800px" /></p>
+<ul>
+<li>引擎代码：自定义的通用引擎代码<br />
+  （如果没有可以跳过，所有代码都放在一个项目中也行）<br />
+  （反之，也可以引入更多依赖的公共库项目）</li>
+<li>游戏代码：用于开发游戏功能</li>
+<li>PC 项目：用于发布 Windows 版本</li>
+<li>Android 项目：用于发布 Android 版本</li>
+<li>其他平台版本：可以创建对应平台的项目进行发布</li>
+</ul>
+<p>教程说明：<br />
+以下操作直接跟着来，快速学习示例一遍<br />
+学会之后，再根据自己的项目进行调整<br />
+不建议直接使用自己项目进行学习<br />
+因为很可能因为代码无法在Android平台兼容而报错<br />
+以下代码比较简单，已经过测试，可以正常运行</p>
+<h2 id="0">0.准备工作</h2>
+<p>开发工具：VS 2022<br />
+MonoGame版本：3.8.1.303</p>
+<p>1）VS2022所需组件<br />
+点击菜单栏，工具 &gt; 获取工具和功能，打开Visual Studio Installer</p>
+<p>点击 “工作负荷”，确保安装了 Android 的开发环境：</p>
+<ul>
+<li>.NET Multi-platform App UI 开发</li>
+</ul>
+<p>然后点 “单个组件”，搜索 “Android”，确保以下三个组件已安装：</p>
+<ul>
+<li>.NET SDK for Android</li>
+<li>Android SDK设置</li>
+<li>OpenJDK（Microsoft 分发）</li>
+</ul>
+<p>这些工具安装好之后，再进行后续操作</p>
+<h2 id="1">1.创建引擎项目</h2>
+<p>如果没有引擎代码，则可以跳过这一步，直接到创建游戏项目</p>
+<p>1、VS2022 &gt; 创建新项目 &gt; 选择项目模板“MonoGame Shared Libary Project”<br />
+输入项目名称“ProjectEngine”，选择路径，进行创建<br />
+这会创建一个解决方案，其中包含一个同名的“公共库项目”</p>
+<p>2、删除默认自带的“Game1.cs”，不需要这个<br />
+（不删后面每个项目都自带了“Game1.cs”，会因为重名文件报错）</p>
+<p>3、新建脚本“RectangleShape.cs”，粘贴以下代码<br />
+我们创建了一个图形类，用于后面的绘制矩形</p>
+<pre><code class="language-cs">using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace MyAmazingGameEngine
+{
+    public class RectangleShape
+    {
+        private Texture2D texture;
+
+        public RectangleShape(GraphicsDevice graphicsDevice, int size, Color color)
+        {
+            texture = new Texture2D(graphicsDevice, size, size);
+            Color[] data = new Color[size * size];
+            for (int i = 0; i &lt; data.Length; ++i)
+            {
+                data[i] = color;
+            }
+            texture.SetData(data);
+        }
+
+        public Texture2D GetTexture()
+        {
+            return texture;
+        }
+    }
+}
+</code></pre>
+<h2 id="2">2.创建游戏项目</h2>
+<p>1、在解决方案上右键 &gt; 添加 &gt; 新建项目，选择项目模板“MonoGame Game Library”<br />
+输入项目名称“ProjectGame”，不用选择路径，会默认当前相同解决方案目录，进行创建<br />
+这会在当前解决方案内，创建一个“游戏库项目”</p>
+<p>2、右键项目名称 ProjectGame &gt; 添加 &gt; 共享引用项目<br />
+在“共享的项目”中勾选前面的引擎项目“ProjectEngine”，点击确定<br />
+这样就引入了之前的引擎项目的代码，每次运行和发布时，会从引擎项目中复制代码进行编译</p>
+<p>3、在游戏项目中，创建脚本“Character.cs”，粘贴以下代码<br />
+我们开始创建一个移动的矩形作为游戏角色</p>
+<pre><code class="language-cs">using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using MyAmazingGameEngine;
+
+namespace MyGame
+{
+    public class Character
+    {
+        private RectangleShape sprite;
+        private Vector2 position = new Vector2(30, 100);
+        private float speed = 0.3f;
+
+        public Character(GraphicsDevice graphicsDevice)
+        {
+            sprite = new RectangleShape(graphicsDevice, 50, Color.Red);
+        }
+
+
+        public void Update(GameTime gameTime)
+        {
+            if (position.X &lt; 30 || position.X &gt; 600)
+            {
+                speed *= -1;
+            }
+
+            position.X += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Begin();
+            spriteBatch.Draw(sprite.GetTexture(), position, Color.White);
+            spriteBatch.End();
+        }
+
+    }
+}
+</code></pre>
+<p>4、以及这个项目默认自带了一个“Game1.cs”，作为游戏的主程序<br />
+修改“Game1.cs”的代码，更新和绘制矩形的移动<br />
+此时游戏还不能独立运行，需要创建各平台对应的版本才能运行</p>
+<pre><code class="language-cs">using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using MyGame;
+
+namespace MyGame
+{
+    public class Game1 : Game
+    {
+        private GraphicsDeviceManager _graphics;
+        private SpriteBatch _spriteBatch;
+        private Character hero;
+
+        public Game1()
+        {
+            _graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = &quot;Content&quot;;
+            IsMouseVisible = true;
+        }
+
+        protected override void Initialize()
+        {
+            // TODO: Add your initialization logic here
+            base.Initialize();
+        }
+
+        protected override void LoadContent()
+        {
+            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            hero = new Character(_graphics.GraphicsDevice);
+            // TODO: use this.Content to load your game content here
+        }
+
+        protected override void Update(GameTime gameTime)
+        {
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
+
+            hero.Update(gameTime);
+            // TODO: Add your update logic here
+
+            base.Update(gameTime);
+        }
+
+        protected override void Draw(GameTime gameTime)
+        {
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            // TODO: Add your drawing code here
+            hero.Draw(_spriteBatch);
+
+            base.Draw(gameTime);
+        }
+    }
+}
+</code></pre>
+<h2 id="3-pc">3.创建 PC 项目</h2>
+<p>1、在解决方案上右键 &gt; 添加 &gt; 新建项目，选择项目模板“MonoGame Cross-Platform Desktop Application”<br />
+输入项目名称“ProjectGame.PC”，不用选择路径，会默认当前相同解决方案目录，进行创建<br />
+这会在当前解决方案内，创建一个“跨平台桌面项目”</p>
+<p>2、删除项目自带的“Game1.cs”，不需要它</p>
+<p>3、在“Program.cs”中，这里是主程序的入口，可以看到会创建并运行 Game1 类<br />
+按F5启动项目，可以看到程序运行，是一个红色的矩形在左右移动<br />
+此时PC版本已经能正常运行</p>
+<pre><code class="language-cs">using MyGame;
+
+using var game = new Game1();
+game.Run();
+</code></pre>
+<p>4、导出exe<br />
+右键“ProjectGame.PC”，选择“发布”，顺着操作下去即可导出exe<br />
+打包成exe的过程相对简单，这里不详细说明</p>
+<p>值得注意的选项：<br />
+1）例如Windows上，基本默认自带了 .net 框架代码<br />
+所以游戏发布时，有选项可以不打包这些框架代码，减少打包文件体积<br />
+例如上steam平台，steam通常会提供这些通用的游戏环境和游戏库文件<br />
+但缺点也是如果别人的机器上没有依赖的库，就会缺失库文件而无法运行<br />
+2）游戏可以把所有文件打包成一个exe，看似简洁方便，也不担心缺失文件<br />
+但是不推荐，这样会影响游戏的运行效率</p>
+<h2 id="4-android">4.创建 Android 项目</h2>
+<p>1、在解决方案上右键 &gt; 添加 &gt; 新建项目，选择项目模板“MonoGame Android Application”<br />
+输入项目名称“ProjectGame.Android”，不用选择路径，会默认当前相同解决方案目录，进行创建<br />
+这会在当前解决方案内，创建一个“Android项目”</p>
+<p>2、删除项目自带的“Game1.cs”，不需要它</p>
+<p>3、在“Activity1.cs”中，这里是主程序的入口，可以看到会创建并运行 Game1 类</p>
+<pre><code class="language-cs">using Android.App;
+using Android.Content.PM;
+using Android.OS;
+using Android.Views;
+using Microsoft.Xna.Framework;
+using MyGame;
+
+namespace ProjectAndroid
+{
+    [Activity(
+        Label = &quot;@string/app_name&quot;,
+        MainLauncher = true,
+        Icon = &quot;@drawable/icon&quot;,
+        AlwaysRetainTaskState = true,
+        LaunchMode = LaunchMode.SingleInstance,
+        ScreenOrientation = ScreenOrientation.FullUser,
+        ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Keyboard | ConfigChanges.KeyboardHidden | ConfigChanges.ScreenSize
+    )]
+    public class Activity1 : AndroidGameActivity
+    {
+        private Game1 _game;
+        private View _view;
+
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+            _game = new Game1();
+            _view = _game.Services.GetService(typeof(View)) as View;
+
+            SetContentView(_view);
+            _game.Run();
+        }
+    }
+}
+</code></pre>
+<p>4、可能会遇到的报错，无法找到命名空间：<br />
+using Android.App;<br />
+using Android.Content.PM;<br />
+等Android相关命名空间无法找到</p>
+<p>这是因为“net6.0-android”已经过时<br />
+双击项目名称“ProjectGame.Android”，打开查看“ProjectAndroid.csproj”<br />
+将这一行：<TargetFramework>net6.0-android</TargetFramework><br />
+改成：<TargetFramework>net8.0-android</TargetFramework></p>
+<h2 id="5-android">5.运行 Android 项目</h2>
+<h3 id="1android">1、安装Android模拟器</h3>
+<p>官方文档教程：<a href="https://learn.microsoft.com/en-us/dotnet/maui/android/emulator/hardware-acceleration?view=net-maui-9.0">https://learn.microsoft.com/en-us/dotnet/maui/android/emulator/hardware-acceleration?view=net-maui-9.0</a></p>
+<p>1）检查当前电脑是否支持 Hyper-V<br />
+查看方式：win+R打开cmd命令行，输入：systeminfo<br />
+其中 Hyper-V 需要的条件有4个，需要自行解决，全部满足后才能开启 Hyper-V<br />
+我自己的情况是右边第二个为否，其他的都为是<br />
+第二个是需要在主板BIOS中设置允许虚拟化CPU，我设置好了之后，4个条件都满足了</p>
+<p>2）在 Windows 中启用 Hyper-V 加速<br />
+Windows搜索框，搜索“windows features”，打开“Windows功能”<br />
+然后找到“Hyper-V”勾选，再找到下方的“Windows虚拟机监控程序平台”勾选<br />
+完成修改后，会提示重启计算机，进行重启<br />
+重启后，就能运行Android模拟器了</p>
+<h3 id="2_1">2、在模拟器上运行项目</h3>
+<p>1）右键“ProjectGame.Android”设置为启动项目，按F5运行</p>
+<p>运行项目，可能会弹窗报错：<br />
+The project cannot be launched for Android. Please check the error list for more details.</p>
+<p>右键解决方案 &gt; 配置启动项目 &gt; 配置属性 &gt; 勾选“ProjectGame.Android”的部署</p>
+<p>2）再次运行项目<br />
+此时可能会弹出安装“Android Device Manager”，进行安装<br />
+然后需要安装一个用于模拟运行的设备，默认是“Pixel 7 - API 34”，进行安装<br />
+安装好后，等待模拟设备开机，像手机模拟器一样<br />
+这期间可能会运行失败，先不用管，因为手机需要设置一下<br />
+等手机完全开机后，找到“设置 &gt; 关于模拟设备”，翻到最底下，点“Build号”5次，解锁开发者模式<br />
+返回“设置 &gt; 系统 &gt; 开发者选项 &gt; 开启USB调试”，停在这个界面<br />
+再次启动项目，这次应该能够正常看到项目在手机上成功运行，是一个红色矩形在左右移动</p>
+<p>3）可能的报错<br />
+应用程序处于中断模式<br />
+没有正确使用教程中的代码，导致代码自身报错了，APP崩溃闪退了</p>
+<h3 id="3">3、在真机上运行</h3>
+<p>1）电脑用数据线连接手机，手机跟模拟器类似，自行找到自己手机品牌的方法，然后进入开发者模式<br />
+打开“USE调试”，以及“USB安装”，这样才能在手机上安装调试的apk</p>
+<p>2）运行项目按钮的右边箭头下拉选项，将模拟器改为选择自己的手机，运行项目<br />
+顺利的话，应该能在手机上运行成功，并且会安装该应用</p>
+<h2 id="6apk">6.导出apk</h2>
+<p>1）修改打包模式<br />
+在 Visual Studio 上方，将 <code>Debug</code> 模式改为 <code>Release | Any CPU</code> 模式<br />
+（避免在 <code>Debug</code>模式打包，会导致 apk 过大）</p>
+<p>2）修改打包格式<br />
+右键“ProjectGame.Android”，选择属性<br />
+在Android &gt; Options &gt; Android package format，将“Release”改为“apk”</p>
+<p>3）分发和打包<br />
+右键“ProjectGame.Android”，选择“Archive（存档）”<br />
+等待编译完成，选择右下角“Distribute（分发）”<br />
+弹出“Ad-Hoc”和“Google Play（灰色）”，选择前者<br />
+进入APK签名界面，首次需要创建自己的签名密钥，点击+号进行创建</p>
+<p>4）创建签名密钥<br />
+※ 签名密钥用于确保应用的唯一性和安全性<br />
+创建的密钥和密码需要备份和记住，如果丢失，后续将无法更新APK！</p>
+<p>创建密钥选项说明：</p>
+<ul>
+<li>Alias：密钥的名称</li>
+<li>Password：密钥的密码，需要记住，每次打包都需要输入密码</li>
+<li>Confirm：再次重复输入密码</li>
+<li>Validity (Years)：密钥的有效期，建议长一点，例如50年</li>
+</ul>
+<p>密钥的证书信息（选填）：</p>
+<ul>
+<li>Full Name：你的名字或公司名称</li>
+<li>Organizational Unit：组织部门</li>
+<li>Organization：组织名称</li>
+<li>City or Locality：所在城市</li>
+<li>State or Province：所在省份</li>
+<li>Country Code（2 digits）：所在国家代码，中国填CN，美国填US</li>
+</ul>
+<p>创建完成后，选择该密钥，Save As，选择 .apk 文件的保存路径<br />
+等待打包，即导出完成</p>
+<p>5）将apk发到手机上进行安装<br />
+可能会安装失败，因为之前使用模拟器测试时安装了相同的应用，此次安装签名不一致<br />
+将之前模拟器测试安装的应用卸载即可<br />
+这样应该就能顺利的在手机上安装和运行游戏了</p>
+<h2 id="7aab">7.导出aab</h2>
+<p>1）在 Google 应用商店发布应用，需要 aab 而不是 apk<br />
+以及需要 Google 开发者账号</p>
+<p>2）修改打包格式<br />
+右键“ProjectGame.Android”，选择属性<br />
+在Android &gt; Options &gt; Android package format，将“Release”改为“bundle”<br />
+分发时，“Ad-Hoc”和“Google Play”，选择后者进行操作即可</p>
+<p>教程到此结束，祝你打包顺利，少报点错~</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
+      
+    
+  </body>
+</html>
